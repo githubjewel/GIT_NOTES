@@ -1,0 +1,143 @@
+/**First download git from the following link:
+   http://git-scm.com/
+
+
+/***Commands and Notes***/
+
+-> pull(move to local),add,commit,push(move to server)
+
+-> Open Git Bash Here by right clicking in a directory or go to  that directory by Git Bash
+
+-> 'git init' to initialize a directory for git.Try to use this in the main project directory.
+
+-> 'git status' command to see the changes or branch name we are currently working.
+    Red color file means unstaged file that means it is a new file or it has modified. 
+    Green color file means staged file but not yet commited.
+
+-> 'git add fileName' to notify the modified or new created file but they are not in
+    the git repository yet that is they are in staging area. Staged files are files
+    we have told git that are ready to be committed. 
+
+-> 'git add *' to add all files.
+
+-> 'git add '*.txt*' ' to add all txt files.
+
+-> 'git add directory/filename' to specify file inside any directory.
+
+-> 'git commit -m "message"' to specify the changes.It is very important to make any change come into contact.
+
+-> 'git commit -am "message"', to commit for all changes once.
+
+-> 'git log' to see all the commits.
+
+-> 'git commit --amend -m "new commit" ', to replace the last commit with 'new commit' 
+    before push that means if we publish a commit to server it will not be changed.
+
+
+    Notun change gula jodi notun commit er maddhome save na kore ager commit replace 
+    korar maddhome save korte chai then we can use it.
+
+-> To push our local repo to the GitHub server we need to add a remote repository.
+
+-> 'git push origin master', to push the current local repository to git server.
+
+-> 'git remote add origin https://github.com/--/--.git', 
+    Run this before first push  
+     That is the sequence will be:
+          git remote add origin url   /**First Time if we create repository from server**/
+          git push -u origin master   /**First Time*//
+          git push                    /**For every time we need push**/
+    
+
+-> 'git push -u origin master' the push command tells Git where to put our commits when we're ready.
+    The name of our remote is origin and the default local or main branch name is master. The -u tells
+    Git to remember the parameters so that next time we can simply run 'git push' and Git will know what
+    to do.
+
+-> We can check for changes on our GitHub repository and pull down any new changes by running:
+   'git pull origin master' 
+
+-> 'git diff fileName', last commit korar por ki ki change korchi sob dekabe.
+
+-> Let's take a look at what is different from our last commit by using the 'git diff' command.
+   In this case we want the diff of our most recent commit, which we can refer to using 
+   the HEAD pointer.Another great use for diff is looking at changes within files that 
+   have already been staged:
+   'git diff HEAD | git diff' 
+   If we find any change after running the above command then we need to add that.
+
+-> 'git diff --staged' to see the changes we just staged. 
+
+-> 'git checkout -- fileName/Directory', roll back to the last committed stage of the file.
+
+-> 'git checkout fileName', go to last committed stage of that file.
+
+-> 'git reset HEAD fileName' or 'git reset filename' to unstage files that is move it to
+    red color stage.
+
+-> 'git branch new_branch' to create a new branch.  
+
+-> 'git branch' to show all branch names and star sign means we are currently working to that brach 
+
+-> 'git checkout branch_name' to switch to that branch.
+
+-> 'git rm '*.txt' ' to remove all txt files. After removing files we need to commit our changes.
+   'git commit -m "all txt removed" '. Use 'git status' to see what we need to commit.
+    
+-> Switch back to the master branch so you can copy (or merge) your changes from the new_branch into 
+   the master branch by the followings:
+   'git checkout master' 
+   'git merge new_branch' 
+
+-> 'git branch -d branch_name' to remove the temporary created branch which not required anymore.
+
+-> 'git push' the final push to push everything we have working on to our remote repository   
+
+-> 'git pull url', to download or to update the local repository that is existing same file
+    will be replaced with the content that was in server.
+
+-> 'git clone https://github.com/githubjewel/push-demo.git' , to copy a repository from server to local.
+    In this case we copy the push-demo repository.Use it for first time becase it will not override. 
+
+-> 'git stash' will removed the contents that was not commit or to remove unwanted things.
+
+-> 'git push origin --delete branch_name' to delete the branch from server.
+
+-> 'git reset filename', move the file from staging to unstaging state.That means from
+    green to red color but file will not deleted.
+
+-> 'git clean -f', to remove the untracked files.
+
+-> 'git log --oneline', will show a list of all commits and use 
+   'git checkout commit_key', to show the stage during that commit.
+
+/***For Branching and Merging***/
+
+  ->git branch new_Branchname
+  ->git checkout new_Branchname
+  ->Make your changes in the local repository.
+  ->git add filename | git add --all, to save the changes.
+  ->git commit, to make the changes effective.
+  ->Then go to master branch by 'git checkout master'
+  ->git merge new_Branchname
+  ->git branch -d new_Branchname, to remove the temporary branch since it is not required.
+  ->Finally 'git push origin master | git push' to upload to git server.
+ 
+  ->Suppose we are in a newbranch called 'testBranch' and we made our commit in this branch.
+    Now if we run : 'git push origin testBranch' 
+    It will create a testBranch in the git server if not exist and then upload the currrent things
+    to that branch.  **/
+  
+
+
+//***Undo changes
+
+  ->'git reset --hard commit_key', it will entirely move to that commited state and everything
+     should be deleted after that commited state.Save the last commit key because after
+     rolled back to a commit it is also possible to come back to the last commit using the
+     same command. 
+
+  ->If we go to a previous commit or if we have less commits or same number of commits
+    but commits are not same than we will not be able to push.In this case we need to use:
+     'git push --force origin master'
+
