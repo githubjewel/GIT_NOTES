@@ -144,3 +144,7 @@
     but commits are not same than we will not be able to push.In this case we need to use:
      'git push --force origin master'
 
+
+  //**Error Fixing:
+  
+    ->'git remote rm origin', for 'fatal: remote origin already exists' error
