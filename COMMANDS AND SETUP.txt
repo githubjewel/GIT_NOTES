@@ -28,8 +28,10 @@
 
 -> 'git commit -am "message"', to commit for all changes once.
 
--> 'git log' to see all the commits.
-
+-> 'git log' to see all the commits.
+
+
+
 -> 'git commit --amend -m "new commit" ', to replace the last commit with 'new commit' 
     before push that means if we publish a commit to server it will not be changed.
 
@@ -126,9 +128,10 @@
   ->Suppose we are in a newbranch called 'testBranch' and we made our commit in this branch.
     Now if we run : 'git push origin testBranch' 
     It will create a testBranch in the git server if not exist and then upload the currrent things
-    to that branch.  **/
+    to that branch.
+  **/
   
-
+  **-->git update-ref -d HEAD, to remove the initial commit and restore  repository to a new state.
 
 //***Undo changes
 
